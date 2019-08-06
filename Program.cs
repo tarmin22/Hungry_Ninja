@@ -79,6 +79,7 @@ namespace Hungry_Ninja
             else
             {
                 this.FoodHistory.Add(item);
+                this.calorieIntake += item.Calories;
                 if (item.IsSpicy)
                     Console.WriteLine(item.Name + " is spicy");
                 else if (item.IsSweet)
@@ -91,6 +92,14 @@ namespace Hungry_Ninja
     {
         static void Main(string[] args)
         {
+            Buffet oriental = new Buffet();
+
+            Ninja armin = new Ninja();
+            armin.Eat(oriental.Serve());
+            armin.Eat(oriental.Serve());
+            armin.Eat(oriental.Serve());
+
+
             Console.WriteLine("Hello World!");
         }
     }
